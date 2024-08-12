@@ -1,2 +1,2 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d1ea8985-68d6-4302-ac26-50245bb8464b/deploy-status)](https://app.netlify.com/sites/extraordinary-crumble-eda607/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0d38fa0c-7931-4d97-865c-4cdf04513a5e/deploy-status)](https://app.netlify.com/sites/depression-app/deploys)
 # Depression APP 
