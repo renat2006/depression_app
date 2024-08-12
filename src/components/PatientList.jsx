@@ -42,7 +42,7 @@ function AdminPanel() {
                 }
 
                 const data = await response.json();
-                console.log(data)
+
                 setPatients(Object.entries(data.patients || {}));
                 setLoading(false);
             } catch (error) {
