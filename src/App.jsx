@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import Header from './components/Header';
-import Login from './pages/Login';
+
 import SignUp from './pages/SignUp';
 import {AuthContext, AuthProvider} from './providers/AuthProvider';
 
@@ -13,6 +13,7 @@ import TestLinks from './components/TestLinks';
 import TestForm from './components/TestForm';
 import AdminPanel from "./components/PatientList.jsx";
 import TestResults from "./components/TestResults.jsx";
+import Login from "./pages/LogIn.jsx";
 
 
 function App() {
