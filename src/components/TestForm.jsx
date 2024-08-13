@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import {useState, useEffect, useContext} from 'react';
+import {useParams, useNavigate} from 'react-router-dom';
 import {
     Container,
     Typography,
@@ -13,10 +13,10 @@ import {
     Alert,
     Grid,
 } from '@mui/material';
-import { AuthContext } from "../providers/AuthProvider.jsx";
+import {AuthContext} from "../providers/AuthProvider.jsx";
 
 function TestForm() {
-    const { patientUuid, testId } = useParams();
+    const {patientUuid, testId} = useParams();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -26,7 +26,7 @@ function TestForm() {
     const [questions, setQuestions] = useState([]);
     const [options, setOptions] = useState([]);
     const [testName, setTestName] = useState('');
-    const { fetchWithAuth } = useContext(AuthContext);
+    const {fetchWithAuth} = useContext(AuthContext);
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -62,7 +62,7 @@ function TestForm() {
                     Authorization: `Bearer ${localStorage.getItem('access_token')}`,
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ patient_uuid: patientUuid, answers }),
+                body: JSON.stringify({patient_uuid: patientUuid, answers}),
             });
 
             if (!response.ok) {
@@ -109,17 +109,17 @@ function TestForm() {
             <Typography variant="h5" gutterBottom>
                 {testName}
             </Typography>
-            {loading && <CircularProgress />}
-            {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>}
+            {loading && <CircularProgress/>}
+            {error && <Alert severity="error" sx={{mt: 2}}>{error}</Alert>}
             {success ? (
-                <Box sx={{ textAlign: 'center', mt: 4 }}>
-                    <Alert severity="success" sx={{ mt: 2 }}>
+                <Box sx={{textAlign: 'center', mt: 4}}>
+                    <Alert severity="success" sx={{mt: 2}}>
                         Результаты успешно сохранены!
                     </Alert>
                     <Button
                         variant="contained"
                         color="primary"
-                        sx={{ mt: 4 }}
+                        sx={{mt: 4}}
                         onClick={() => navigate('/patients')}
                     >
                         Вернуться к списку пациентов
@@ -136,10 +136,13 @@ function TestForm() {
                             mt: 4,
                         }}
                     >
-                        <Typography align="center" sx={{ fontSize: '1.2rem', fontWeight: 'medium', mb: 2 }}>
+                        <Typography align="center" sx={{fontSize: '1.2rem', fontWeight: 'medium', mb: 2}}>
                             {questions[currentQuestion]}
                         </Typography>
-                        <FormControl component="fieldset" sx={{ mt: 2, width: '100%' }}>
+                        <Typography align="center" sx={{fontSize: '0.9rem', color: 'gray'}}>
+                            Вопрос {currentQuestion + 1} из {questions.length}
+                        </Typography>
+                        <FormControl component="fieldset" sx={{mt: 2, width: '100%'}}>
                             <RadioGroup
                                 row={options.length === 2}
                                 aria-label={`question-${currentQuestion + 1}`}
@@ -169,7 +172,7 @@ function TestForm() {
                                         >
                                             <FormControlLabel
                                                 value={index.toString()}
-                                                control={<Radio />}
+                                                control={<Radio/>}
                                                 label={option}
                                             />
                                         </Grid>
@@ -177,11 +180,11 @@ function TestForm() {
                                 </Grid>
                             </RadioGroup>
                         </FormControl>
-                        <Box sx={{ mt: 4 }}>
+                        <Box sx={{mt: 4}}>
                             <Button
                                 variant="outlined"
                                 color="primary"
-                                sx={{ mr: 2 }}
+                                sx={{mr: 2}}
                                 onClick={goToPreviousQuestion}
                                 disabled={currentQuestion === 0}
                             >
