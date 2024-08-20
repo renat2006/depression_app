@@ -52,7 +52,7 @@ function LandingPage() {
                         }}
                     />
                     <Typography variant="body1" align="center">
-                        <strong>Фаттахов Ильяс Маратович:</strong>
+                        <strong>Фаттахов Ильяс Маратович: </strong>
                         Исполнитель стартап-проекта,
                         медицинский психолог
                         Университетской клиники КФУ,
